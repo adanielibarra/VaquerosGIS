@@ -1,21 +1,26 @@
 [general]
 name=VaquerosGIS
 qgisMinimumVersion=3.16
-description=Base cartográfica de Tamaulipas (México) lista para trabajar: imagen de satélite, estado, municipios con su nombre, localidades, colonias y campus, recortados con el límite estatal y con estilo. / Ready-to-use base map of Tamaulipas (Mexico), clipped to the state and styled.
-version=0.1.0
+description=Base cartográfica de Tamaulipas (México) lista para trabajar: imagen de satélite, relieve, estado, municipios con su nombre, distritos de riego, localidades, colonias y campus, recortados con el límite estatal y con estilo. / Ready-to-use base map of Tamaulipas (Mexico), clipped to the state and styled.
+version=0.1.2
 author=Daniel Ibarra Marinas, Ana Mónica de Jhesú García (Vienna)
 email=daniel.ibarra@uat.edu.mx
 about=Base cartográfica de Tamaulipas para QGIS, desarrollada en la Facultad de Ingeniería y Ciencias (FIC) de la Universidad Autónoma de Tamaulipas (UAT) por Daniel Ibarra Marinas y Ana Mónica de Jhesú García (Vienna).
-    Sirve para empezar un proyecto en Tamaulipas sin perder tiempo buscando, recortando y dando estilo a las capas de referencia. Se eligen con tres casillas qué partes cargar, y el plugin añade al proyecto un grupo "Tamaulipas" con lo marcado:
+    Sirve para empezar un proyecto en Tamaulipas sin perder tiempo buscando, recortando y dando estilo a las capas de referencia. Se eligen con casillas qué partes cargar, y el plugin añade al proyecto un grupo "Tamaulipas" con lo marcado:
     - Puntos (arriba): localidades (8.004), colonias (87) y campus (1), de 0,5 mm.
     - Polígonos (en medio, solo contorno): el límite del estado, los 43 municipios con su nombre en cursiva y del mismo color que su borde, y las áreas de 63 localidades.
+    - Los 7 distritos de riego de Tamaulipas (002 Mante, 025 Bajo Río Bravo, 026 Bajo Río San Juan, 029 Xicoténcatl, 050 Acuña Falcón, 086 Soto la Marina y 092A Río Pánuco, Unidad Ánimas), en azul celeste con trama rayada y con sus datos de usuarios, superficies y volúmenes de agua del año agrícola 2016-2017. Se cargan con su geometría oficial, sin recortar (del 050 solo el 65 por ciento cae dentro del estado). El área del polígono no coincide con la superficie oficial del distrito (campo sup_tot): para superficies, usar los atributos.
+    - Relieve (casilla desmarcada por defecto): modelo digital de elevaciones de unos 90 m, con tintas hipsométricas suaves y sombreado multidireccional. Dentro del estado tapa la imagen de satélite.
     - Imagen de satélite de Google (al fondo).
     Todas las capas están recortadas con el límite estatal y se cargan en solo lectura, para no modificar por error los datos del plugin. Si el proyecto está vacío, el SRC pasa a WGS 84 / UTM zona 14N (EPSG:32614), que cubre todo el estado, y el mapa se encuadra en Tamaulipas.
     Se lanza desde la Caja de herramientas de Processing (VaquerosGIS > Cartografía base > VaquerosGIS), desde el botón de la barra de herramientas o desde el menú Complementos.
     Datos: Who's On First (https://whosonfirst.org/docs/licenses/). Algunas de sus fuentes exigen atribución (por ejemplo, GeoNames y Quattroshapes, CC-BY). Tras el recorte se eliminaron los fragmentos de municipios o localidades vecinas con menos del 1 por ciento de su superficie dentro del estado.
+    Distritos de riego: CONAGUA, a través del servicio INFOTECA de SEMARNAT (año agrícola 2016-2017).
     Imagen de fondo: Google. Su uso está sujeto a las condiciones de servicio de Google.
-tags=Tamaulipas, México, Mexico, cartografía base, base map, municipios, localidades, colonias, Who's On First
-changelog=0.1.0: primera versión.
+tags=relieve, MDE, DEM, hillshade, Tamaulipas, México, Mexico, cartografía base, base map, municipios, distritos de riego, irrigation districts, CONAGUA, localidades, colonias, Who's On First
+changelog=0.1.2: sin cambios en el funcionamiento; se revisan los textos de los metadatos y de la documentación.
+    0.1.1: relieve (modelo digital de elevaciones con sombreado); los 7 distritos de riego de Tamaulipas (CONAGUA), en azul celeste con trama rayada y con su propia casilla; nombres de los municipios a 8 pt.
+    0.1.0: primera versión.
 tracker=https://github.com/adanielibarra/VaquerosGIS/issues
 repository=https://github.com/adanielibarra/VaquerosGIS
 homepage=https://github.com/adanielibarra/VaquerosGIS
